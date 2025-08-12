@@ -1,0 +1,45 @@
+body {
+    background: rgb(48, 133, 189);
+}
+
+div#titulo {
+    text-align: center;
+    padding: 15px;
+    color: rgb(235, 240, 246);
+    font: bold 20pt Arial;
+}
+
+div#tela {
+    text-align: center;
+    margin-top: 10px;
+}
+
+div#buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+section {
+    background: rgb(227, 217, 217);
+    border-radius: 10px;
+    padding: 15px;
+    width: 400px;
+    height: 500px;
+    margin: auto;
+    box-shadow: 5px 5px 15px;
+}
+
+button {
+    font: bold 30pt Arial;
+    color:rgb(48, 133, 189);
+    width: 90px;
+    height: 75px;
+    margin-top: 6px;
+}
+
+input {
+    width: 350px;
+    height: 60px;
+    font: normal 20pt Arial;
+    text-align: end;
+}

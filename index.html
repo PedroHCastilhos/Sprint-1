@@ -7,7 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>Calculadora</header>
+    <div id = "titulo">Calculadora</div>
+    <section>
+        <div id = "tela"> <input id = "res"> </div>
+        <div id = "buttons">
+            <button onclick = "clear()">AC</button>
+            <button onclick="parenteses()">( )</button>
+            <button onclick="porcento()">%</button>
+            <button onclick="soma()">+</button> <br>
+            <button onclick="one()">1</button>
+            <button onclick="two()">2</button>
+            <button onclick="three()">3</button>
+            <button onclick="subtracao()">-</button> <br>
+            <button onclick="four()">4</button>
+            <button onclick="five()">5</button>
+            <button onclick="six()">6</button>
+            <button onclick="multiplicacao()">*</button> <br>
+            <button onclick="seven()">7</button>
+            <button onclick="eight()">8</button>
+            <button onclick="nine()">9</button>
+            <button onclick="divisao()">/</button> <br>
+            <button id = "remove" onclick="remove()">^</button> 
+            <button onclick="zero()">0</button>
+            <button onclick="ponto()">.</button>
+            <button onclick="equals()">=</button>
+        </div>
+    </section>
     <script src="script.js"></script>
 </body>
 </html>
