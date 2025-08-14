@@ -1,8 +1,8 @@
 let res = document.getElementById("res");
 let cont = 0;
 
-function clear() {
-    res.value = 0;
+function limpar() {
+    res.value = "";
     cont = 0;
 }
 
@@ -15,7 +15,7 @@ function parenteses() {
     cont++;
 }
 
-function porcento() {
+function percent() {
     res.value = res.value / 100;
 }
 
@@ -72,17 +72,31 @@ function divisao() {
 }
 
 function remove() {
-    res.value = res.value
+    res.value = res.value.slice(0,-1);
 }
 
 function zero() {
     res.value = res.value + 0;
 }
 
-function ponto() {
+function point() {
     res.value = res.value + ".";
 }
 
 function equals() {
-    res.value = res.value + "=";
+    stringResultado = String(res.value)
+    resultado = stringResultado.split('');
+    let num1 = 0;
+    let num2 = 0;
+    for(let i = 0; i < resultado.length; i++) {
+        if(resultado[i] == '+') {
+            for(let j = 0; j < i; j++) {
+                num1 = num1 + resultado[j];
+            }
+            for(let k = i + 1; resultado[k] == '-' || resultado[k] == '+' || resultado[k] == '*' || resultado[k] == '/'; k++) {
+                num2 = num2 + resultado[k];
+            }
+        }
+    }
+    res.value = parseFloat(num1) + parseFloat(num2);
 }
