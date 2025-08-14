@@ -1,6 +1,6 @@
 function clear() {
     let res = getElementById("res");
-    res.innerHTML = " ";
+    res.value = " ";
 }
 
 function parenteses() {
