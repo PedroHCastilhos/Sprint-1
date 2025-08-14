@@ -1,98 +1,88 @@
+let res = document.getElementById("res");
+let cont = 0;
+
 function clear() {
-    let res = getElementById("res");
-    res.value = " ";
+    res.value = 0;
+    cont = 0;
 }
 
 function parenteses() {
-    let res = getElementById("res");
-    res.innerHTML = "(";
+    if(cont % 2 == 0) {
+        res.value = res.value + "(";
+    } else {
+        res.value = res.value + ")"
+    }
+    cont++;
 }
 
 function porcento() {
-    let res = getElementById("res");
-    res.innerHTML = res.value / 100;
+    res.value = res.value / 100;
 }
 
 function soma() {
-    let res = getElementById("res");
-    res.innerHTML = "+";
+    res.value = res.value + "+";
 }
 
 function one() {
-    let res = getElementById("res");
-    res.innerHTML = "1";
+    res.value = res.value + 1;
 }
 
 function two() {
-    let res = getElementById("res");
-    res.innerHTML = "2";
+    res.value = res.value + 2;
 }
 
 function three() {
-    let res = getElementById("res");
-    res.innerHTML = "3";
+    res.value = res.value + 3;
 }
 
 function subtracao() {
-    let res = getElementById("res");
-    res.innerHTML = "-";
+    res.value = res.value + "-";
 }
 
 function four() {
-    let res = getElementById("res");
-    res.innerHTML = "4";
+    res.value = res.value + 4;
 }
 
 function five() {
-    let res = getElementById("res");
-    res.innerHTML = "5";
+    res.value = res.value + 5;
 }
 
 function six() {
-    let res = getElementById("res");
-    res.innerHTML = "6";
+    res.value = res.value + 6;
 }
 
 function multiplicacao() {
-    let res = getElementById("res");
-    res.innerHTML = "*";
+    res.value = res.value + "*";
 }
 
 function seven() {
-    let res = getElementById("res");
-    res.innerHTML = "7";
+    res.value = res.value + 7;
 }
 
 function eight() {
-    let res = getElementById("res");
-    res.innerHTML = "8";
+    res.value = res.value + 8;
 }
 
 function nine() {
-    let res = getElementById("res");
-    res.innerHTML = "9";
+    res.value = res.value + 9;
 }
 
 function divisao() {
-    let res = getElementById("res");
-    res.innerHTML = "/";
+    res.value = res.value + "/";
 }
 
 function remove() {
-    let res = getElementById("res");
+    res.value = res.value
 }
 
 function zero() {
-    let res = getElementById("res");
-    res.innerHTML = "0";
+    res.value = res.value + 0;
 }
 
 function ponto() {
-    let res = getElementById("res");
-    res.innerHTML = ".";
+    res.value = res.value + ".";
 }
 
 function equals() {
-    let res = getElementById("res");
-    res.innerHTML = "=";
+    res.value = res.value + "=";
 }
