@@ -84,19 +84,6 @@ function point() {
 }
 
 function equals() {
-    stringResultado = String(res.value)
-    resultado = stringResultado.split('');
-    let num1 = 0;
-    let num2 = 0;
-    for(let i = 0; i < resultado.length; i++) {
-        if(resultado[i] == '+') {
-            for(let j = 0; j < i; j++) {
-                num1 = num1 + resultado[j];
-            }
-            for(let k = i + 1; resultado[k] == '-' || resultado[k] == '+' || resultado[k] == '*' || resultado[k] == '/'; k++) {
-                num2 = num2 + resultado[k];
-            }
-        }
-    }
-    res.value = parseFloat(num1) + parseFloat(num2);
+    let resultado = eval(res.value.toString());
+    res.value = resultado;
 }
