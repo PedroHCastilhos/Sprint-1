@@ -2,18 +2,6 @@ body {
     background: rgb(48, 133, 189);
 }
 
-.tela {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.buttons {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    margin-top: 15px;
-}
-
 section {
     background: rgb(227, 217, 217);
     border-radius: 20px;
@@ -24,6 +12,13 @@ section {
     box-shadow: 5px 5px 15px;
     margin-top: 100px;
     position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.buttons {
+    margin-top: 15px;
 }
 
 button {
@@ -33,14 +28,14 @@ button {
     height: 75px;
     margin-top: 6px;
     border-radius: 15px;
-    margin-left: 3px;
-    margin-right: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
 }
 
 input {
-    width: 370px;
-    height: 60px;
-    font: normal 20pt Arial;
+    width: 380px;
+    height: 70px;
+    font: normal 30pt Arial;
     text-align: end;
     border-radius: 15px;
 }
