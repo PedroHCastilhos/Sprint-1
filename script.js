@@ -27,9 +27,6 @@ function percent() {
 }
 
 function soma() {
-    if(tela == true){
-        limpar();
-    }
     tela = false;
     res.value = res.value + "+";
 }
@@ -59,9 +56,6 @@ function three() {
 }
 
 function subtracao() {
-    if(tela == true){
-        limpar();
-    }
     tela = false;
     res.value = res.value + "-";
 }
@@ -91,9 +85,6 @@ function six() {
 }
 
 function multiplicacao() {
-    if(tela == true){
-        limpar();
-    }
     tela = false;
     res.value = res.value + "*";
 }
@@ -123,9 +114,6 @@ function nine() {
 }
 
 function divisao() {
-    if(tela == true){
-        limpar();
-    }
     tela = false;
     res.value = res.value + "/";
 }
