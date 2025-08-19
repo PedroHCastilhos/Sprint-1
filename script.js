@@ -1,9 +1,11 @@
 let res = document.getElementById("res");
+let visor = document.getElementById("visor");
 let cont = 0;
 let tela = false;
 
 function limpar() {
     res.value = "";
+    visor.value = res.value
     cont = 0;
     tela = false;
 }
@@ -18,17 +20,25 @@ function parenteses() {
     } else {
         res.value = res.value + ")"
     }
+    visor.value = res.value
     cont++;
 }
 
 function percent() {
     tela = true;
-    res.value = res.value / 100;
+    let resultado = eval(res.value.toString());
+    res.value = resultado / 100;
+    visor.value = res.value
 }
 
 function soma() {
     tela = false;
-    res.value = res.value + "+";
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+        res.value += "";
+    } else {
+        res.value = res.value + "+";
+    }
+    visor.value = res.value
 }
 
 function one() {
@@ -37,6 +47,7 @@ function one() {
     }
     tela = false;
     res.value = res.value + 1;
+    visor.value = res.value
 }
 
 function two() {
@@ -45,6 +56,7 @@ function two() {
     }
     tela = false;
     res.value = res.value + 2;
+    visor.value = res.value
 }
 
 function three() {
@@ -53,11 +65,17 @@ function three() {
     }
     tela = false;
     res.value = res.value + 3;
+    visor.value = res.value
 }
 
 function subtracao() {
     tela = false;
-    res.value = res.value + "-";
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+        res.value += "";
+    } else {
+        res.value = res.value + "-";
+    }
+    visor.value = res.value
 }
 
 function four() {
@@ -66,6 +84,7 @@ function four() {
     }
     tela = false;
     res.value = res.value + 4;
+    visor.value = res.value
 }
 
 function five() {
@@ -74,6 +93,7 @@ function five() {
     }
     tela = false;
     res.value = res.value + 5;
+    visor.value = res.value
 }
 
 function six() {
@@ -82,11 +102,17 @@ function six() {
     }
     tela = false;
     res.value = res.value + 6;
+    visor.value = res.value
 }
 
 function multiplicacao() {
     tela = false;
-    res.value = res.value + "*";
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+        res.value += "";
+    } else {
+        res.value = res.value + "*";
+    }
+    visor.value = res.value
 }
 
 function seven() {
@@ -94,7 +120,8 @@ function seven() {
         limpar();
     }
     tela = false;
-    res.value = res.value + 7;
+    res.value = res.value + 7;  
+    visor.value = res.value
 }
 
 function eight() {
@@ -103,6 +130,7 @@ function eight() {
     }
     tela = false;
     res.value = res.value + 8;
+    visor.value = res.value
 }
 
 function nine() {
@@ -111,11 +139,17 @@ function nine() {
     }
     tela = false;
     res.value = res.value + 9;
+    visor.value = res.value
 }
 
 function divisao() {
     tela = false;
-    res.value = res.value + "/";
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+        res.value += "";
+    } else {
+        res.value = res.value + "/";
+    }
+    visor.value = res.value
 }
 
 function remove() {
@@ -124,6 +158,7 @@ function remove() {
     }
     tela = false;
     res.value = res.value.slice(0,-1);
+    visor.value = res.value
 }
 
 function zero() {
@@ -132,6 +167,7 @@ function zero() {
     }
     tela = false;
     res.value = res.value + 0;
+    visor.value = res.value
 }
 
 function point() {
@@ -139,7 +175,12 @@ function point() {
         limpar();
     }
     tela = false;
-    res.value = res.value + ".";
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+        res.value += "";
+    } else {
+        res.value = res.value + ".";
+    }
+    visor.value = res.value
 }
 
 function equals() {
