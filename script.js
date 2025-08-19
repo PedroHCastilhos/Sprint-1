@@ -2,6 +2,16 @@ let res = document.getElementById("res");
 let visor = document.getElementById("visor");
 let cont = 0;
 let tela = false;
+let ponto = false;
+
+function number(number) {
+    if(tela == true){
+        limpar();
+    }
+    tela = false;
+    res.value = res.value + number;
+    visor.value = res.value
+}
 
 function limpar() {
     res.value = "";
@@ -15,13 +25,16 @@ function parenteses() {
         limpar();
     }
     tela = false;
-    if(cont % 2 == 0) {
+    if(cont % 2 == 0 && res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" || res.value.slice(-1) == "/" || res.value.slice(-1) == "") {
         res.value = res.value + "(";
-    } else {
+    } else if(cont % 2 != 0) {
         res.value = res.value + ")"
+    } else {
+        res.value += "";
     }
     visor.value = res.value
     cont++;
+    ponto = false;
 }
 
 function percent() {
@@ -39,33 +52,7 @@ function soma() {
         res.value = res.value + "+";
     }
     visor.value = res.value
-}
-
-function one() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 1;
-    visor.value = res.value
-}
-
-function two() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 2;
-    visor.value = res.value
-}
-
-function three() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 3;
-    visor.value = res.value
+    ponto = false;
 }
 
 function subtracao() {
@@ -76,33 +63,7 @@ function subtracao() {
         res.value = res.value + "-";
     }
     visor.value = res.value
-}
-
-function four() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 4;
-    visor.value = res.value
-}
-
-function five() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 5;
-    visor.value = res.value
-}
-
-function six() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 6;
-    visor.value = res.value
+    ponto = false;
 }
 
 function multiplicacao() {
@@ -113,33 +74,7 @@ function multiplicacao() {
         res.value = res.value + "*";
     }
     visor.value = res.value
-}
-
-function seven() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 7;  
-    visor.value = res.value
-}
-
-function eight() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 8;
-    visor.value = res.value
-}
-
-function nine() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 9;
-    visor.value = res.value
+    ponto = false;
 }
 
 function divisao() {
@@ -150,6 +85,7 @@ function divisao() {
         res.value = res.value + "/";
     }
     visor.value = res.value
+    ponto = false;
 }
 
 function remove() {
@@ -161,24 +97,16 @@ function remove() {
     visor.value = res.value
 }
 
-function zero() {
-    if(tela == true){
-        limpar();
-    }
-    tela = false;
-    res.value = res.value + 0;
-    visor.value = res.value
-}
-
 function point() {
     if(tela == true){
         limpar();
     }
     tela = false;
-    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || ponto) {
         res.value += "";
     } else {
         res.value = res.value + ".";
+        ponto = true;
     }
     visor.value = res.value
 }
@@ -188,5 +116,5 @@ function equals() {
     res.value = resultado;
     cont = 0;
     tela = true;
+    ponto = false;
 }
-
