@@ -27,13 +27,14 @@ function parenteses() {
     tela = false;
     if(cont % 2 == 0 && res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" || res.value.slice(-1) == "/" || res.value.slice(-1) == "") {
         res.value = res.value + "(";
+        cont++;
     } else if(cont % 2 != 0) {
         res.value = res.value + ")"
+        cont++;
     } else {
         res.value += "";
     }
     visor.value = res.value
-    cont++;
     ponto = false;
 }
 
@@ -46,10 +47,13 @@ function percent() {
 
 function soma() {
     tela = false;
-    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == ".") {
         res.value += "";
-    } else {
+    } else if(res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/") {
+        remove();
         res.value = res.value + "+";
+    } else {
+        res.value += "+";
     }
     visor.value = res.value
     ponto = false;
@@ -57,10 +61,13 @@ function soma() {
 
 function subtracao() {
     tela = false;
-    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+    if(res.value.slice(-1) == "-" || res.value.slice(-1) == ".") {
         res.value += "";
-    } else {
+    } else if(res.value.slice(-1) == "+" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/") {
+        remove();
         res.value = res.value + "-";
+    } else {
+        res.value += "-";
     }
     visor.value = res.value
     ponto = false;
@@ -68,10 +75,13 @@ function subtracao() {
 
 function multiplicacao() {
     tela = false;
-    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+    if(res.value.slice(-1) == "*" || res.value.slice(-1) == ".") {
         res.value += "";
-    } else {
+    } else if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "/") {
+        remove();
         res.value = res.value + "*";
+    } else {
+        res.value += "*";
     }
     visor.value = res.value
     ponto = false;
@@ -79,10 +89,13 @@ function multiplicacao() {
 
 function divisao() {
     tela = false;
-    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*" ||res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
+    if(res.value.slice(-1) == "/" || res.value.slice(-1) == ".") {
         res.value += "";
-    } else {
+    } else if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || res.value.slice(-1) == "*") {
+        remove();
         res.value = res.value + "/";
+    } else {
+        res.value += "/";
     }
     visor.value = res.value
     ponto = false;
@@ -102,7 +115,7 @@ function point() {
         limpar();
     }
     tela = false;
-    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || ponto) {
+    if(res.value.slice(-1) == "+" || res.value.slice(-1) == "-" || ponto || res.value.slice(-1) == "*" || res.value.slice(-1) == "/" || res.value.slice(-1) == "") {
         res.value += "";
     } else {
         res.value = res.value + ".";
